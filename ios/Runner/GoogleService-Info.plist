@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CLIENT_ID</key>
-	<string>601308771309-envt4u2mcjqs8170nubhj1kd6qkdbfar.apps.googleusercontent.com</string>
-	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.601308771309-envt4u2mcjqs8170nubhj1kd6qkdbfar</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDarDI-WnAaqkJKUKgyLYstVyknA3YaYx0</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +9,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>kaleo.chat.app</string>
+	<string>com.flutterflow.consolid</string>
 	<key>PROJECT_ID</key>
 	<string>consolid-f3645</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,6 +25,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:601308771309:ios:2a1c22e2dd27a3bc2aede4</string>
+	<string>1:601308771309:ios:b8075b68b0247ba02aede4</string>
 </dict>
 </plist>

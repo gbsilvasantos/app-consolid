@@ -35,6 +35,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
     _model.displayNameController ??= TextEditingController();
     _model.yourTitleController1 ??= TextEditingController();
     _model.yourTitleController2 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -429,7 +430,7 @@ class _CompleteProfileWidgetState extends State<CompleteProfileWidget> {
                                     TextButton(
                                       onPressed: () =>
                                           Navigator.pop(alertDialogContext),
-                                      child: Text('Ok'),
+                                      child: Text('OK'),
                                     ),
                                   ],
                                 );

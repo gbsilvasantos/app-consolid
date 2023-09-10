@@ -7,9 +7,9 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:601308771309:android:78bcc09d48552a8f2aede4",
+        "mobilesdk_app_id": "1:601308771309:android:47609a91931202132aede4",
         "android_client_info": {
-          "package_name": "kaleo.chat.app"
+          "package_name": "com.flutterflow.consolid"
         }
       },
       "oauth_client": [

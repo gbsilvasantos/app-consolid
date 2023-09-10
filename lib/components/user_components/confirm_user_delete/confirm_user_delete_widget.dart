@@ -30,6 +30,8 @@ class _ConfirmUserDeleteWidgetState extends State<ConfirmUserDeleteWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ConfirmUserDeleteModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -207,10 +209,27 @@ class _ConfirmUserDeleteWidgetState extends State<ConfirmUserDeleteWidget> {
 
                                         context.goNamed('Login');
                                       } else {
-                                        await currentUserReference!.delete();
-                                        await authManager.deleteUser(context);
+                                        await showDialog(
+                                          context: context,
+                                          builder: (alertDialogContext) {
+                                            return AlertDialog(
+                                              title: Text(
+                                                  'EXCLUA OS USUÁRIOS CADASTRADOS'),
+                                              content: Text(
+                                                  'Antes de você excluir sua conta, você precisará excluir os usuários que você cadastrou no sistema para liberar os recursos utilizados. Após a exclusão de todos os usuários cadastrados por você, será possível excluir sua conta.'),
+                                              actions: [
+                                                TextButton(
+                                                  onPressed: () =>
+                                                      Navigator.pop(
+                                                          alertDialogContext),
+                                                  child: Text('OK'),
+                                                ),
+                                              ],
+                                            );
+                                          },
+                                        );
 
-                                        context.goNamed('Login');
+                                        context.goNamed('gerenciarPessoas');
                                       }
                                     },
                                     text: 'SIM',

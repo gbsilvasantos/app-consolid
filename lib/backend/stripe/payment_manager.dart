@@ -11,10 +11,11 @@ import '../../flutter_flow/flutter_flow_util.dart';
 import '../../flutter_flow/flutter_flow_widgets.dart';
 import '../cloud_functions/cloud_functions.dart';
 
-final _isProd = false;
+final _isProd = true;
 
 // Stripe Credentials
-const _kProdStripePublishableKey = '';
+const _kProdStripePublishableKey =
+    'pk_live_51NlB7dAtV3Qda9QceU8DoHkKsuAWJyELnM6bDltbR9BIeS5115uRelix9Oe4S2F8znrKxnwdH3fF6U2fCeWQmIjU00oKbTz9Tz';
 const _kTestStripePublishableKey =
     'pk_test_51NlB7dAtV3Qda9QczI55w4odR3gbYTkwqNeNR8QX8IeF4NhfDTRCN9vWtasDIstCCtiuBhXVpvBe41IKh5I0nNMo00kVimlI5B';
 const _kAppleMerchantId = '';

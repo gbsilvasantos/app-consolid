@@ -44,6 +44,7 @@ class _CadastroEnderecoUserWidgetState
     _model.textController5 ??= TextEditingController();
     _model.textController6 ??= TextEditingController();
     _model.textController7 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -657,7 +658,7 @@ class _CadastroEnderecoUserWidgetState
                                       TextButton(
                                         onPressed: () =>
                                             Navigator.pop(alertDialogContext),
-                                        child: Text('Ok'),
+                                        child: Text('OK'),
                                       ),
                                     ],
                                   );

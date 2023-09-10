@@ -9,6 +9,7 @@ import 'schema/users_record.dart';
 import 'schema/organizacoes_record.dart';
 import 'schema/pessoas_record.dart';
 import 'schema/pagamentos_record.dart';
+import 'schema/planos_record.dart';
 import 'dart:async';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
 
@@ -22,6 +23,7 @@ export 'schema/users_record.dart';
 export 'schema/organizacoes_record.dart';
 export 'schema/pessoas_record.dart';
 export 'schema/pagamentos_record.dart';
+export 'schema/planos_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -316,6 +318,84 @@ Future<FFFirestorePage<PagamentosRecord>> queryPagamentosRecordPage({
       if (isStream) {
         final streamSubscription =
             (page.dataStream)?.listen((List<PagamentosRecord> data) {
+          data.forEach((item) {
+            final itemIndexes = controller.itemList!
+                .asMap()
+                .map((k, v) => MapEntry(v.reference.id, k));
+            final index = itemIndexes[item.reference.id];
+            final items = controller.itemList!;
+            if (index != null) {
+              items.replaceRange(index, index + 1, [item]);
+              controller.itemList = {
+                for (var item in items) item.reference: item
+              }.values.toList();
+            }
+          });
+        });
+        streamSubscriptions?.add(streamSubscription);
+      }
+      return page;
+    });
+
+/// Functions to query PlanosRecords (as a Stream and as a Future).
+Future<int> queryPlanosRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      PlanosRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<PlanosRecord>> queryPlanosRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      PlanosRecord.collection,
+      PlanosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<PlanosRecord>> queryPlanosRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      PlanosRecord.collection,
+      PlanosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+Future<FFFirestorePage<PlanosRecord>> queryPlanosRecordPage({
+  Query Function(Query)? queryBuilder,
+  DocumentSnapshot? nextPageMarker,
+  required int pageSize,
+  required bool isStream,
+  required PagingController<DocumentSnapshot?, PlanosRecord> controller,
+  List<StreamSubscription?>? streamSubscriptions,
+}) =>
+    queryCollectionPage(
+      PlanosRecord.collection,
+      PlanosRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      nextPageMarker: nextPageMarker,
+      pageSize: pageSize,
+      isStream: isStream,
+    ).then((page) {
+      controller.appendPage(
+        page.data,
+        page.nextPageMarker,
+      );
+      if (isStream) {
+        final streamSubscription =
+            (page.dataStream)?.listen((List<PlanosRecord> data) {
           data.forEach((item) {
             final itemIndexes = controller.itemList!
                 .asMap()

@@ -36,6 +36,8 @@ class _ConfirmPessoaDeleteWidgetState extends State<ConfirmPessoaDeleteWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ConfirmPessoaDeleteModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override

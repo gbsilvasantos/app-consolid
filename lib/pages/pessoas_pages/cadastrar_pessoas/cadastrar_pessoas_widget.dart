@@ -50,6 +50,7 @@ class _CadastrarPessoasWidgetState extends State<CadastrarPessoasWidget> {
     _model.textController9 ??= TextEditingController();
     _model.textController10 ??= TextEditingController();
     _model.textController11 ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -131,7 +132,7 @@ class _CadastrarPessoasWidgetState extends State<CadastrarPessoasWidget> {
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
+                                    child: Text('OK'),
                                   ),
                                 ],
                               );
@@ -1101,7 +1102,7 @@ class _CadastrarPessoasWidgetState extends State<CadastrarPessoasWidget> {
                                   TextButton(
                                     onPressed: () =>
                                         Navigator.pop(alertDialogContext),
-                                    child: Text('Ok'),
+                                    child: Text('OK'),
                                   ),
                                 ],
                               );

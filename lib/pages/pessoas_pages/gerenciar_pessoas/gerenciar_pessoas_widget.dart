@@ -48,6 +48,7 @@ class _GerenciarPessoasWidgetState extends State<GerenciarPessoasWidget>
     });
 
     _model.textController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -461,6 +462,29 @@ class _GerenciarPessoasWidgetState extends State<GerenciarPessoasWidget>
                                                               .labelMedium,
                                                         ),
                                                       ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          listViewPessoasRecord
+                                                              .tipo,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .warning,
+                                                              ),
+                                                        ),
+                                                      ),
                                                     ],
                                                   ),
                                                 ),
@@ -614,6 +638,28 @@ class _GerenciarPessoasWidgetState extends State<GerenciarPessoasWidget>
                                                           style: FlutterFlowTheme
                                                                   .of(context)
                                                               .labelMedium,
+                                                        ),
+                                                      ),
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child: Text(
+                                                          pessoasItem.tipo,
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .labelMedium
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Poppins',
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .warning,
+                                                              ),
                                                         ),
                                                       ),
                                                     ],

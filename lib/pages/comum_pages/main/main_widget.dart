@@ -29,6 +29,8 @@ class _MainWidgetState extends State<MainWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => MainModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -162,6 +164,24 @@ class _MainWidgetState extends State<MainWidget> {
                                       ),
                                     ],
                                   ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 4.0, 0.0, 0.0),
+                                    child: Text(
+                                      valueOrDefault<String>(
+                                        mainUsersRecord.nomeOrganizacao,
+                                        'No Email Associated with Account',
+                                      ),
+                                      style: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Lexend Deca',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            fontSize: 18.0,
+                                          ),
+                                    ),
+                                  ),
                                   Row(
                                     mainAxisSize: MainAxisSize.max,
                                     mainAxisAlignment: MainAxisAlignment.center,
@@ -170,7 +190,7 @@ class _MainWidgetState extends State<MainWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 4.0, 0.0, 0.0),
                                         child: Text(
-                                          mainUsersRecord.nomeOrganizacao,
+                                          mainUsersRecord.email,
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -182,23 +202,6 @@ class _MainWidgetState extends State<MainWidget> {
                                         ),
                                       ),
                                     ],
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        mainUsersRecord.email,
-                                        'No Email Associated with Account',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Lexend Deca',
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondary,
-                                          ),
-                                    ),
                                   ),
                                 ],
                               ),
@@ -478,15 +481,11 @@ class _MainWidgetState extends State<MainWidget> {
                                 Flexible(
                                   child: Align(
                                     alignment: AlignmentDirectional(0.90, 0.00),
-                                    child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          33.0, 0.0, 0.0, 0.0),
-                                      child: Icon(
-                                        Icons.new_releases_sharp,
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondaryText,
-                                        size: 24.0,
-                                      ),
+                                    child: Icon(
+                                      Icons.new_releases_sharp,
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryText,
+                                      size: 24.0,
                                     ),
                                   ),
                                 ),
@@ -610,7 +609,7 @@ class _MainWidgetState extends State<MainWidget> {
                                     alignment: AlignmentDirectional(0.90, 0.00),
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          33.0, 0.0, 0.0, 0.0),
+                                          70.0, 0.0, 0.0, 0.0),
                                       child: Icon(
                                         Icons.new_releases_sharp,
                                         color: FlutterFlowTheme.of(context)

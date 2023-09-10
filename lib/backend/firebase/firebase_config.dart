@@ -10,8 +10,8 @@ Future initFirebase() async {
             projectId: "consolid-f3645",
             storageBucket: "consolid-f3645.appspot.com",
             messagingSenderId: "601308771309",
-            appId: "1:601308771309:web:b59d51783af397812aede4",
-            measurementId: "G-FE5VTWD899"));
+            appId: "1:601308771309:web:03783a7062ccce682aede4",
+            measurementId: "G-2E070JY2J3"));
   } else {
     await Firebase.initializeApp();
   }

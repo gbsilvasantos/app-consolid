@@ -1,4 +1,4 @@
-package kaleo.chat.app
+package com.flutterflow.consolid
 
 import io.flutter.embedding.android.FlutterFragmentActivity
 

@@ -39,6 +39,8 @@ class _DetalhesPessoasWidgetState extends State<DetalhesPessoasWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DetalhesPessoasModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
   @override
@@ -172,7 +174,7 @@ class _DetalhesPessoasWidgetState extends State<DetalhesPessoasWidget> {
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: Text('OK'),
                                           ),
                                         ],
                                       );
@@ -1322,7 +1324,7 @@ class _DetalhesPessoasWidgetState extends State<DetalhesPessoasWidget> {
                                           TextButton(
                                             onPressed: () => Navigator.pop(
                                                 alertDialogContext),
-                                            child: Text('Ok'),
+                                            child: Text('OK'),
                                           ),
                                         ],
                                       );
